@@ -10,7 +10,7 @@ body {
 .navbar {
     width: 100%;
     background-color: #ffffff;
-    padding: 15px 50px;
+    padding: 15px 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,6 +22,7 @@ body {
 }
 
 .logo {
+    padding: 0px 0px 0px 50px;
     font-size: 20px;
     font-weight: bold;
     color: #007bff;
@@ -52,6 +53,7 @@ nav ul li a:hover {
 /* 로그인 & 회원가입 버튼 */
 .auth-buttons {
     display: flex;
+    padding: 0px 50px 0px 0px;
     gap: 10px;
 }
 

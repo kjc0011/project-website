@@ -37,5 +37,13 @@ document.getElementById("loginForm")?.addEventListener("submit", function(event)
     }
 });
 
-document.getElementById("")
+function checkAttendance() {
+    document.getElementById("attendance-status").innerHTML = "출석 여부: 체크 완료 ✅";
+}
+
+// 공지사항 목록 불러오기
+document.addEventListener("DOMContentLoaded", function() {
+    let noticeList = document.getElementById("notice-list");
+    noticeList.innerHTML = "<li>🚀 오늘부터 출석 체크 시스템 사용 시작!</li>";
+});
 
