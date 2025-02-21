@@ -3,19 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회사 출석 시스템 로그인</title>
+    <title>회사 출석 시스템</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- 네비게이션 바 -->
+    <header class="navbar">
+        <div class="logo">🔷 회사 로고</div>
+        <nav>
+            <ul>
+                <li><a href="#">회사 소개</a></li>
+                <li><a href="#">업무 소개</a></li>
+                <li><a href="#">채용 공고</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="login.html" class="login">로그인</a>
+            <a href="register.html" class="register">회원가입</a>
+        </div>
+    </header>
+
+    <!-- 메인 배너 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🚀 2024년 스마트 출석 시스템</h1>
+            <p>더 편리한 출석 체크 & 공지사항 관리</p>
+            <button onclick="location.href='dashboard.html'">출석 시스템 시작하기</button>
+        </div>
+    </section>
+
+    <!-- 메인 콘텐츠 -->
     <div class="container">
-        <h2>회사 출석 시스템 로그인</h2>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="아이디" required>
-            <input type="password" id="password" placeholder="비밀번호" required>
-            <button type="submit">로그인</button>
-        </form>
-        <p>아직 계정이 없나요? <a href="register.html">회원가입</a></p>
+        <!-- 공지사항 -->
+        <div class="notice-board">
+            <h2>📢 공지사항</h2>
+            <ul id="notice-list">
+                <li>🚀 오늘부터 출석 체크 시스템 사용 시작!</li>
+                <li>📌 서버 점검 예정 (02.25 22:00 ~ 02.26 06:00)</li>
+            </ul>
+        </div>
+
+        <!-- 출석 체크 -->
+        <div class="attendance">
+            <h2>✅ 출석 체크</h2>
+            <button onclick="checkAttendance()">출석 체크</button>
+            <p id="attendance-status">출석 여부: 미체크</p>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
