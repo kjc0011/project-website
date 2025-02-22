@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/login.css">
-    <title>login</title>
+  <meta charset="UTF-8">
+  <title>출석 시스템 로그인</title>
+  <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-    
-    asd
+  <div class="login-container">
+    <!-- 상단 로고 이미지 -->
+    <img src="../images/logo.png" alt="회사 로고">
+    <!-- 간단한 타이틀 -->
+    <h1>출석 시스템</h1>
+    <!-- 로그인 폼 -->
+    <form id="loginForm">
+      <input type="text" id="userID" placeholder="사용자 ID">
+      <input type="password" id="password" placeholder="비밀번호">
+      <button type="submit">로그인</button>
+    </form>
+    <!-- 회원가입 링크 (회원가입 페이지로 이동) -->
+    <a href="register.html">회원가입</a>
+  </div>
 
-    <script src="../script/script.js"></script>
-
+  <script src="../script/login.js"></script> <!-- 로그인 기능 연결 -->
 </body>
-
-
 </html>

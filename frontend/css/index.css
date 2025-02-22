@@ -1,74 +1,85 @@
-.hero {
-    width: 100%;
-    height: 400px;
-    background: url('images/banner.jpg') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
-
-.hero-content {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 30px;
-    border-radius: 10px;
-}
-
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.hero button {
-    background-color: #ffcc00;
-    color: #333;
-    padding: 10px 20px;
-}
-
-/* 컨텐츠 */
+/* 메인 컨테이너 스타일 */
 .container {
     display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
+    justify-content: space-between;
     padding: 20px;
 }
 
-/* 공지사항 */
-.notice-board {
-    width: 45%;
-    background: white;
-    padding: 20px;
+/* 왼쪽 (오늘의 날짜 & 달력) */
+.left-section {
+    width: 50%; /* 반을 꽉 채움 */
+    padding: 40px;
+    background-color: #f8f9fa;
+    text-align: center;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* 출석 체크 */
-.attendance {
-    width: 45%;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.attendance button {
+/* 달력 스타일 */
+#calendar {
+    margin-top: 20px;
     width: 100%;
-    padding: 12px;
-    background: #007bff;
+    height: 350px;
+}
+
+/* 오른쪽 출석 현황 */
+.right-section {
+    width: 50%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* 출석 진행 바 */
+.progress-container {
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #4caf50;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    border-radius: 20px;
+}
+
+/* 출석 버튼 */
+.attendance button {
+    padding: 10px 20px;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
+    font-size: 16px;
 }
 
 .attendance button:hover {
-    background: #0056b3;
+    background-color: #0056b3;
+}
+
+/* 공지사항 */
+.notice {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.notice ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.notice li {
+    margin: 10px 0;
 }
