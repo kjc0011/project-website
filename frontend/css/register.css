@@ -1,18 +1,105 @@
-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* 전체 페이지 스타일 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pretendard', sans-serif;
+    background-color: #f4f7f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-form button {
+/* 회원가입 컨테이너 */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 회원가입 박스 */
+.register-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+/* 헤더 (로고 + 제목) */
+.register-header {
+    margin-bottom: 20px;
+}
+
+.register-header .logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.register-header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* 입력 필드 스타일 */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* 회원가입 버튼 */
+.register-btn {
     width: 100%;
     background-color: #007bff;
     color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
     font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-form button:hover {
+.register-btn:hover {
     background: #0056b3;
+}
+
+/* 로그인 링크 */
+.login-link {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
 }

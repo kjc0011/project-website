@@ -2,8 +2,9 @@ const mysql = require("mysql2");
 
 const db = mysql.createConnection({
     host: "localhost",
+    port: 3306,
     user: "root",
-    password: "1234",
+    password: "0923", // MySQL 비밀번호 확인
     database: "memberdb",
 });
 

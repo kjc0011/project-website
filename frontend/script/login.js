@@ -1,19 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const loginForm = document.getElementById("loginForm");
-  
-    loginForm.addEventListener("submit", function (event) {
+  const loginForm = document.getElementById("loginForm");
+
+  if (!loginForm) {
+      console.error("❌ loginForm 요소를 찾을 수 없습니다!");
+      return;
+  }
+
+  loginForm.addEventListener("submit", async function (event) {
       event.preventDefault(); // 기본 폼 제출 방지
-  
-      const userID = document.getElementById("userID").value;
+
+      const username = document.getElementById("username").value;
       const password = document.getElementById("password").value;
-  
-      // 간단한 로그인 검증 (실제 프로젝트에서는 서버 연동 필요)
-      if (userID === "admin" && password === "1234") {
-        alert("로그인 성공!");
-        window.location.href = "../index.html"; // 로그인 성공 시 index.html로 이동
-      } else {
-        alert("아이디 또는 비밀번호가 잘못되었습니다.");
+
+      console.log("📢 [클라이언트 요청] 로그인 요청:", { username, password });
+
+      try {
+          const response = await fetch("http://localhost:5000/api/auth/login", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ username, password }),
+          });
+
+          const data = await response.json();
+          console.log("📢 [서버 응답] 로그인 결과:", data);
+
+          if (response.ok) {
+              alert("로그인 성공!"); 
+              window.location.href = "../index.html"; // ✅ 로그인 성공 후 index.html로 이동!
+          } else {
+              alert(`❌ 오류: ${data.message}`); // 로그인 실패 시 오류 메시지 출력
+          }
+      } catch (error) {
+          console.error("❌ [로그인 실패] 서버 요청 오류:", error);
+          alert("서버와의 연결에 문제가 발생했습니다!");
       }
-    });
   });
-  
+});
