@@ -4,31 +4,24 @@ const db = require("../config");
 
 const router = express.Router();
 
-// 🔹 회원가입 API
+// 🔹 회원가입 API (이메일 대신 username 사용)
 router.post("/register", (req, res) => {
-    const { username, email, password } = req.body;
+    const { username, password } = req.body;
 
-    console.log("📢 [회원가입 요청 수신]", { username, email, password });
-
-    if (!username || !email || !password) {
-        console.error("❌ [회원가입 실패] 필수 입력값 없음!");
-        return res.status(400).json({ message: "모든 필드를 입력해주세요!" });
+    if (!username || !password) {
+        return res.status(400).json({ message: "아이디와 비밀번호를 입력해주세요!" });
     }
 
     const hashedPassword = bcrypt.hashSync(password, 10);
 
-    const sql = "INSERT INTO members (username, email, pw) VALUES (?, ?, ?)";
-    db.query(sql, [username, email, hashedPassword], (err, result) => {
-        if (err) {
-            console.error("❌ [회원가입 실패] MySQL 오류:", err);
-            return res.status(500).json({ message: "회원가입 실패", error: err });
-        }
-        console.log("✅ [회원가입 성공] ID:", result.insertId);
+    const sql = "INSERT INTO members (username, pw) VALUES (?, ?)";
+    db.query(sql, [username, hashedPassword], (err, result) => {
+        if (err) return res.status(500).json({ message: "회원가입 실패", error: err });
         res.json({ message: "회원가입 성공!" });
     });
 });
 
-// 🔹 로그인 API
+// 🔹 로그인 API (이메일 → username으로 변경)
 router.post("/login", (req, res) => {
     const { username, password } = req.body;
 
