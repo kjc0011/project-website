@@ -162,7 +162,6 @@ nav ul li a:hover {
     font-size: 16px;
     font-weight: bold;
     transition: 0.3s;
-    margin-top: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -178,7 +177,7 @@ nav ul li a:hover {
 
 /* 공지사항 스타일 */
 .notice {
-    margin-top: 20px;
+    margin-top: 60px;
     padding: 15px;
     background-color: #F0F4FF;
     border-radius: 10px;
@@ -244,14 +243,27 @@ p.today-text {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.nt {
+    display: flex;
+}
+
 /* 공지사항 제목 */
-.notice h3 {
+.notice h3.notice-title {
     font-size: 20px;
     font-weight: bold;
     color: #435373;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.notice h3.notice-subtitle {
+    font-size: 16px;
+    color: #777;
+    align-items: center;
+    margin: 21px 0px 10px 10px;
+    margin-top: 21px;
     margin-bottom: 10px;
 }
 
