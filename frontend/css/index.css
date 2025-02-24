@@ -1,4 +1,4 @@
-/* 메인 컨테이너 스타일 */
+/* 메인 컨테이너 */
 .container {
     display: flex;
     justify-content: space-between;
@@ -7,28 +7,22 @@
 
 /* 왼쪽 (오늘의 날짜 & 달력) */
 .left-section {
-    width: 50%; /* 반을 꽉 채움 */
-    padding: 40px;
-    background-color: #f8f9fa;
-    text-align: center;
+    width: 50%;
+    padding: 30px;
+    background-color: white;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* 달력 스타일 */
-#calendar {
-    margin-top: 20px;
-    width: 100%;
-    height: 350px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* 오른쪽 출석 현황 */
 .right-section {
     width: 50%;
-    padding: 20px;
-    background-color: #fff;
+    padding: 30px;
+    background-color: white;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* 출석 진행 바 */
@@ -54,32 +48,78 @@
     border-radius: 20px;
 }
 
-/* 출석 버튼 */
-.attendance button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.attendance button:hover {
-    background-color: #0056b3;
-}
-
-/* 공지사항 */
+/* 공지사항 스타일 */
 .notice {
-    margin-top: 30px;
-    text-align: left;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.notice ul {
-    list-style-type: none;
+.notice h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.notice .sub-title {
+    font-size: 16px;
+    color: #777;
+    margin-left: 8px;
+}
+
+/* 공지사항 리스트 */
+.notice-list {
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.notice li {
-    margin: 10px 0;
+/* 공지사항 개별 항목 */
+.notice-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 공지사항 말머리 */
+.notice-list .category {
+    font-weight: bold;
+    color: #2E7D32;
+    margin-right: 8px;
+}
+
+/* 공지사항 제목 */
+.notice-list li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.notice-list li a:hover {
+    color: #456EBF;
+}
+
+/* 날짜 */
+.notice-date {
+    font-size: 14px;
+    color: #777;
+}
+
+/* 중요 공지사항 배지 */
+.notice-badge {
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 10px;
+    margin-left: 5px;
 }
