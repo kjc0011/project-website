@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("📢 [서버 응답] 로그인 결과:", data);
   
             if (response.ok) {
-                alert(`로그인 성공!`);
+                alert("로그인 성공!");
                 window.location.href = "../index.html"; // ✅ 로그인 성공 후 index.html로 이동!
             } else {
                 alert(`❌ 오류: ${data.message}`); // 로그인 실패 시 오류 메시지 출력
