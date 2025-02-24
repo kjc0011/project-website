@@ -5,11 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("currentDate").textContent = formattedDate;
     document.getElementById("attendance-date").textContent = formattedDate;
 
-    // 달력 추가 (Google Calendar 사용)
-    const calendarElement = document.getElementById("calendar");
-    calendarElement.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&showPrint=0&showTabs=0&mode=MONTH" width="100%" height="350" frameborder="0"></iframe>`;
-
-    // 출석 버튼 클릭 시 출석 진행률 업데이트
+    // 출석 버튼 및 진행률 바
     const attendanceBtn = document.getElementById("attendance-btn");
     const progressFill = document.getElementById("progress-fill");
     const progressPercent = document.getElementById("progress-percent");
@@ -28,10 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
             attendanceCount++;
             let progress = (attendanceCount / totalDays) * 100;
             progressFill.style.width = progress + "%";
+            progressFill.textContent = Math.round(progress) + "%";
             progressPercent.textContent = Math.round(progress) + "%";
 
             alert("출석이 완료되었습니다!");
             isAttended = true; // 출석 완료 상태로 변경
+            attendanceBtn.disabled = true; // 버튼 비활성화
         } else {
             alert("이번 달 출석이 완료되었습니다!");
         }

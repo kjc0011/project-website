@@ -25,27 +25,76 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* 출석 진행 바 */
-.progress-container {
-    margin: 20px 0;
+/* 출석 현황 타이틀 */
+.right-section h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
 }
 
+/* 출석 진행 바 컨테이너 */
+.progress-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* 출석률 텍스트 */
+.progress-container p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* 출석률 바 */
 .progress-bar {
     width: 100%;
     background-color: #e0e0e0;
     border-radius: 20px;
+    height: 18px;
+    position: relative;
     overflow: hidden;
-    height: 20px;
 }
 
+/* 출석률 채워지는 부분 */
 .progress-fill {
     width: 0%;
     height: 100%;
-    background-color: #4caf50;
-    text-align: center;
-    line-height: 20px;
+    background: linear-gradient(to right, #4caf50, #2e7d32);
+    text-align: right;
+    line-height: 18px;
     color: white;
+    font-size: 14px;
+    font-weight: bold;
     border-radius: 20px;
+    padding-right: 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* 출석 버튼 */
+.attendance button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.attendance button:hover {
+    background-color: #0056b3;
+    box-shadow: none;
+}
+
+/* 출석 완료 버튼 (비활성화) */
+.attendance button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 /* 공지사항 스타일 */
