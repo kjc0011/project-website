@@ -14,4 +14,8 @@ DESC members;
 
 INSERT INTO members (username, email, pw) 
 VALUES ("admin", "example@example.com", "1234");
+
+DELETE FROM members
+WHERE username = 'admin';
+
 SELECT * FROM members;

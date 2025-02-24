@@ -4,24 +4,32 @@ const db = require("../config");
 
 const router = express.Router();
 
-// 🔹 회원가입 API (이메일 대신 username 사용)
-router.post("/register", (req, res) => {
-    const { username, password } = req.body;
+// 🔹 로그인 테스트 계정 (DB 없이도 테스트 가능)
+const testUser = {
+    username: "member",
+    password: "qwe123" // 해싱된 비밀번호가 아님 (테스트 용도)
+};
 
-    if (!username || !password) {
-        return res.status(400).json({ message: "아이디와 비밀번호를 입력해주세요!" });
+// 🔹 회원가입 API
+router.post("/register", (req, res) => {
+    const { username, email, password } = req.body;
+
+    if (!username || !email || !password) {
+        return res.status(400).json({ message: "아이디, 이메일, 비밀번호를 모두 입력해주세요!" });
     }
 
     const hashedPassword = bcrypt.hashSync(password, 10);
 
-    const sql = "INSERT INTO members (username, pw) VALUES (?, ?)";
-    db.query(sql, [username, hashedPassword], (err, result) => {
-        if (err) return res.status(500).json({ message: "회원가입 실패", error: err });
+    const sql = "INSERT INTO members (username, email, pw) VALUES (?, ?, ?)";
+    db.query(sql, [username, email, hashedPassword], (err, result) => {
+        if (err) {
+            return res.status(500).json({ message: "회원가입 실패", error: err });
+        }
         res.json({ message: "회원가입 성공!" });
     });
 });
 
-// 🔹 로그인 API (이메일 → username으로 변경)
+// 🔹 로그인 API (테스트 계정 지원)
 router.post("/login", (req, res) => {
     const { username, password } = req.body;
 
@@ -29,6 +37,12 @@ router.post("/login", (req, res) => {
         return res.status(400).json({ message: "아이디와 비밀번호를 입력해주세요!" });
     }
 
+    // ✅ 테스트 계정으로 로그인 시도
+    if (username === testUser.username && password === testUser.password) {
+        return res.json({ message: "로그인 성공! (테스트 계정)", userId: "test_user" });
+    }
+
+    // ✅ 실제 DB에 있는 회원 검색
     const sql = "SELECT * FROM members WHERE username = ?";
     db.query(sql, [username], (err, results) => {
         if (err) return res.status(500).json({ message: "서버 오류", error: err });

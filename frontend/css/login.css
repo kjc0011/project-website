@@ -32,7 +32,6 @@ body, html {
 /* 로고 */
 .login-header .logo {
   width: 80px;
-  margin-bottom: 15px;
 }
 
 /* 로그인 타이틀 */
@@ -40,7 +39,8 @@ body, html {
   font-size: 24px;
   font-weight: bold;
   color: #435373;
-  margin-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 35px;
 }
 
 /* 입력 필드 스타일 */
@@ -58,8 +58,8 @@ body, html {
 }
 
 .input-group input {
-  width: 100%;
-  padding: 12px;
+  width: 96%;
+  padding: 12px 0px 12px 12px;
   border: 1px solid #B6C5F2;
   border-radius: 8px;
   font-size: 16px;
