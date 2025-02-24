@@ -14,7 +14,7 @@ body, html {
     display: flex;
     height: 60%;
     justify-content: space-between;
-    padding: 80px 50px;
+    padding: 100px 50px;
 }
 
 /* 네비게이션 바 */
