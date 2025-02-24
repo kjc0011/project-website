@@ -11,7 +11,9 @@
 
     <!-- 네비게이션 바 -->
     <header class="navbar">
-        <div class="logo">🔷 회사 로고</div>
+        <div class="logo">
+            <img src="img/icon.png" alt=""/>
+        </div>
         <nav>
             <ul>
                 <li><a href="#">업무 소개</a></li>
@@ -29,9 +31,8 @@
     <div class="container">
         <!-- 왼쪽 (오늘의 날짜 & 달력) -->
         <div class="left-section">
-            <h2>📅 오늘의 날짜</h2>
-            <p id="currentDate"></p>
-            <div id="calendar"></div> <!-- 달력 추가 -->
+            <p class="today-text" id="currentDate"></p>
+            <div id="calendar"></div>
         </div>
 
         <!-- 오른쪽 (출석 현황 + 공지사항) -->
@@ -48,8 +49,7 @@
 
             <!-- 출석 버튼 -->
             <div class="attendance">
-                <p>날짜: <span id="attendance-date"></span></p>
-                <button id="attendance-btn">출석하기</button>
+                <button id="attendance-btn"><span id="attendance-date"></span> 출석하기</button>
             </div>
 
             <!-- 공지사항 -->
